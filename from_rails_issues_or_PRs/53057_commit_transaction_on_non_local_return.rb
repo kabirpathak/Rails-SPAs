@@ -36,10 +36,8 @@ class BugTest < Minitest::Test
   def test_association_stuff
     Post.transaction do
       Post.create!
-      binding.pry
       return
     end
-    binding.pry
     # => DEPRECATION WARNING: A transaction is being rolled back because the transaction block was
   end
 end

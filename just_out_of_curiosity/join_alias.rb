@@ -51,7 +51,6 @@ class BugTest < Minitest::Test
     # # -- NG --
     # # INNER JOIN "comments" ON "comments"."post_id" = "posts"."id"
     p Post.joins(:comment).pluck(comment: [:id]).to_sql
-    binding.pry
 
     # assert_equal [1], Post.joins(:comment).merge(Comment.where(id: 1)).pluck(comment: [ :id ])
     # Post.joins(:comment).merge(Comment.where(id: 1)).to_sql

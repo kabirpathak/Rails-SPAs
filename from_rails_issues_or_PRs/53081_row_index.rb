@@ -28,7 +28,6 @@ class BugTest < Minitest::Test
         .select_all("select 1 as id, 20 as age")
         .first
 
-        binding.pry
       data = data.transform_values(&:to_f)
       OpenStruct.new(data)
   end

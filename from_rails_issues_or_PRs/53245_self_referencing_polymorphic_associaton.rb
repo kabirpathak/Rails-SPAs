@@ -45,7 +45,6 @@ class BugTest < Minitest::Test
     post = Post.create(body: 'post')
     comment = post.comments.create(body: 'comment')
     nested_comment = comment.comments.create(body: 'nested comment')
-    binding.pry
     sql = Comment.joins(:comments).where(comments: { body: 'nested comment' }).to_sql
     puts sql
 
