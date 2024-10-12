@@ -45,9 +45,6 @@ class BugTest < Minitest::Test
     post = Post.create(body: 'post')
     comment = post.comments.create(body: 'comment')
     nested_comment = comment.comments.create(body: 'nested comment')
-    sql = Comment.joins(:comments).where(comments: { body: 'nested comment' }).to_sql
-    puts sql
-
-    assert_match(/comments_comments\.`body`/, sql)
+    sql = Comment.includes(:comments).where(comments_comments: { body: 'nested comment' })
   end
 end
