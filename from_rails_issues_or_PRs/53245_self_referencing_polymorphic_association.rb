@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+## NOTE: this file must be placed inside a Rails
+## project for it to find the environment.rb file
+
 require "bundler/inline"
 
 gemfile(true) do

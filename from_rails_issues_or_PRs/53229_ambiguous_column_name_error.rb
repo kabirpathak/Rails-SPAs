@@ -7,8 +7,9 @@ gemfile(true) do
 
   # gem "rails"
   # If you want to test against edge Rails replace the previous line with this:
-  gem "rails", github: "rails/rails", branch: "main"
-
+  # gem "rails", github: "rails/rails", branch: "7-2-stable" # doesn't work with Rails 8
+  gem "pry"
+  gem "rails", path: "../rails" # always takes the current branch
   gem "sqlite3"
   gem "active_record_union"
 end
